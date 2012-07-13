@@ -1,6 +1,7 @@
 class apt-cacher($ensure=present) {
     case $operatingsystem {
         centos: { fail('Why would you try to install apt-cacher on centos?') }
+        ubuntu,debian: {}
         default: { fail('Unrecognized operating system') }
     }
     package { 'apt-cacher':
